@@ -1,0 +1,30 @@
+let employeName = prompt("Enter employee name:")
+let basicSalary = Number(prompt("Enter the salary:"))
+let experience = Number(prompt("Enter the experience"))
+
+
+let bonus;
+let tax;
+let finalSalary;
+if(experience>=5){
+    bonus = basicSalary * 20/100;
+}
+else if (experience >=2){
+    bonus = basicSalary*10/100;
+
+}
+else{
+    bonus = basicSalary * 5/100;
+
+}
+if(basicSalary>=100000){
+    tax = basicSalary * 10/100;
+}
+else if (basicSalary>=50000){
+    tax = basicSalary * 5/100;
+}
+else{
+    tax = basicSalary*2/100;
+}
+finalSalary = basicSalary + bonus - tax;
+document.getElementById("Employee").innerHTML = `Salary slip<br>` + `Employe Name: ${employeName}<br>`+`Basic Salary: ${basicSalary}<br>`+`Bonus:${bonus}<br>` + `Tax:${tax}<br>` + `Final salary:${finalSalary}`;
